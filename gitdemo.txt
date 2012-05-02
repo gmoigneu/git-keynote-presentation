@@ -1,0 +1,49 @@
+== Clone ==
+git clone git@git.agence-soon.fr:/projet-test.git
+cd projet-test/
+ls
+git status
+
+== Commit ==
+git checkout develop
+git checkout -b feature-1
+Création compass et développement
+Création cache
+mate .gitignore
+git add .
+git commit -m "#1 feature-1 : Thème SASS"
+
+== Merge ==
+git checkout develop
+git merge feature-1
+git branch -d feature-1
+git push
+
+== Test ==
+git clone git@git.agence-soon.fr:/projet-test.git
+cd projet-test/
+ls
+git log
+git tag stable-1 id_commit
+
+== Deploy ==
+cd /home/httpd/
+git clone git@git.agence-soon.fr:/projet-test.git projet-test.vmtest.agence-soon.fr
+
+== Hotfix ==
+git checkout -b feature2
+vim index.html
+git checkout master
+git pull
+git checkout -b hotfix1
+vim index.html
+git add .
+git commit -m "#2 hotfix1"
+git merge hotfix1
+git branch -d hotfix1
+
+== Deploy Hotfix ==
+git pull
+
+== Revert ==
+git checkout id_commit
